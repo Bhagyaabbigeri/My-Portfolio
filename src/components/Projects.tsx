@@ -11,6 +11,9 @@ import {
   Trophy,
   Brain,
   ArrowUpRight,
+  ChevronLeft,
+  ChevronRight,
+  X,
 } from "lucide-react";
 
 /* ─── Custom Icons for compatibility ─── */
@@ -345,7 +348,79 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
   );
 }
 
+function SimpleProjectCard({ project, index }: { project: ProjectItem; index: number }) {
+  const Icon = project.icon;
+  return (
+    <motion.a
+      key={project.id}
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      whileHover={{ y: -8, scale: 1.01 }}
+      className="group relative rounded-[1.5rem] border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl overflow-hidden flex flex-col cursor-pointer transition-all duration-500 hover:border-white/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] h-full"
+    >
+      {/* Glow on hover */}
+      <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-br ${project.accent} pointer-events-none`} />
+
+      <div className="relative p-6 md:p-8 flex-1 flex flex-col justify-between space-y-6">
+        {/* Top row */}
+        <div className="flex items-start justify-between">
+          <div className="flex items-center gap-3">
+            <div className={`p-3 rounded-xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 text-orange-400 group-hover:text-white group-hover:bg-orange-500/20 transition-all duration-300`}>
+              <Icon className="w-5 h-5" />
+            </div>
+            <span className="text-zinc-700 font-mono text-[10px] font-bold tracking-widest">{project.num}</span>
+          </div>
+
+          {/* Language badge */}
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-[9px] text-zinc-400 font-mono font-bold tracking-widest uppercase">
+            <span className="w-1 h-1 rounded-full" style={{ backgroundColor: project.langColor }} />
+            {project.language}
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="space-y-2 flex-1">
+          <h3 className="text-xl font-bold tracking-tight text-white group-hover:text-orange-200 transition-colors duration-300">
+            {project.title}
+          </h3>
+          <p className="text-zinc-400 text-xs md:text-sm leading-relaxed font-light">
+            {project.desc}
+          </p>
+        </div>
+
+        {/* Tech Badges & View Link */}
+        <div className="space-y-4 pt-4 border-t border-white/[0.05] z-10">
+          <div className="flex flex-wrap gap-1.5">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-2 py-0.5 rounded-md bg-white/[0.03] border border-white/[0.08] text-[9px] text-zinc-500 font-mono group-hover:border-orange-500/20 group-hover:text-orange-300 transition-all duration-300"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Interactive Button */}
+          <div className="group/btn relative inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-orange-500/5 border border-orange-500/10 text-[10px] font-bold text-orange-400 tracking-widest uppercase overflow-hidden transition-all duration-300 hover:bg-orange-500 hover:text-black hover:shadow-[0_0_20px_rgba(249,115,22,0.4)]">
+            <span className="relative z-10">Deploy Artifact</span>
+            <ArrowUpRight className="w-3 h-3 relative z-10 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+          </div>
+        </div>
+      </div>
+    </motion.a>
+  );
+}
+
 export default function Projects() {
+  const featuredProjects = projects.slice(0, 3);
+  const otherProjects = projects.slice(3);
+
   return (
     <section id="projects" className="relative w-full bg-[#030014] px-6 py-14 md:py-32 z-20 overflow-hidden">
 
@@ -408,10 +483,17 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* ── PROJECTS LIST (STACKED) ── */}
+        {/* ── FEATURED PROJECTS (STACKED) ── */}
         <div className="flex flex-col">
-          {projects.map((project, idx) => (
+          {featuredProjects.map((project, idx) => (
             <ProjectCard key={project.id} project={project} index={idx} />
+          ))}
+        </div>
+
+        {/* ── OTHER PROJECTS (GRID) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+          {otherProjects.map((project, idx) => (
+            <SimpleProjectCard key={project.id} project={project} index={idx} />
           ))}
         </div>
 
