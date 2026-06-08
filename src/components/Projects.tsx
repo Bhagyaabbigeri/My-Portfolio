@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Code2,
   Satellite,
@@ -10,6 +11,7 @@ import {
   Trophy,
   Brain,
   ArrowUpRight,
+  Zap,
 } from "lucide-react";
 
 interface ProjectItem {
@@ -23,6 +25,7 @@ interface ProjectItem {
   langColor: string;
   icon: React.ElementType;
   accent: string;
+  image?: string;
 }
 
 const projects: ProjectItem[] = [
@@ -30,8 +33,8 @@ const projects: ProjectItem[] = [
     id: "spacerisk-radar",
     num: "01",
     title: "SpaceRisk-Radar",
-    desc: "Built a real-time SSA platform propagating 2,000+ satellites via SGP4/SDP4 with conjunction screening, collision probability estimation, and a 3D Three.js globe with live trajectories and Kessler syndrome simulation.",
-    tags: ["Python", "Flask", "Flask-SocketIO", "SGP4", "Three.js", "Socket.IO", "SQLite", "PyJWT"],
+    desc: "Built a real-time SSA platform propagating 2,000+ satellites via SGP4/SDP4 with conjunction screening and 3D Three.js globe.",
+    tags: ["Python", "Flask", "SGP4", "Three.js", "Socket.IO", "SQLite"],
     link: "https://github.com/Bhagyaabbigeri/SpaceRisk-Radar",
     language: "Python",
     langColor: "#3572A5",
@@ -42,8 +45,8 @@ const projects: ProjectItem[] = [
     id: "gokulahealth",
     num: "02",
     title: "GokulaHealth",
-    desc: "Built an offline-first Android cattle farm app with MVVM + Clean Architecture, featuring livestock profiles, milk yield tracking, MPAndroidChart analytics, and a WorkManager-powered vaccination scheduler.",
-    tags: ["Kotlin", "MVVM", "Room", "Hilt", "WorkManager", "Jetpack Navigation", "MPAndroidChart", "Material Design 3"],
+    desc: "Built an offline-first Android cattle farm app with MVVM + Clean Architecture, milk yield tracking, and analytics.",
+    tags: ["Kotlin", "MVVM", "Room", "Hilt", "WorkManager", "Material Design 3"],
     link: "https://github.com/Bhagyaabbigeri/GokulaHealth",
     language: "Kotlin",
     langColor: "#A97BFF",
@@ -54,8 +57,8 @@ const projects: ProjectItem[] = [
     id: "empowerher",
     num: "03",
     title: "EmpowerHer",
-    desc: "Built a full-stack women's safety platform with one-tap SOS, Twilio SMS/voice alerts, GPS tracking, AI threat detection, and an empowerment hub, backed by JWT auth, Firebase, and MongoDB + Express REST API.",
-    tags: ["React", "TypeScript", "Vite", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Twilio", "Firebase"],
+    desc: "Full-stack women's safety platform with one-tap SOS, Twilio alerts, GPS tracking, and AI threat detection.",
+    tags: ["React", "TypeScript", "Node.js", "Express.js", "MongoDB", "Twilio"],
     link: "https://github.com/Bhagyaabbigeri/EmpowerHer",
     language: "TypeScript",
     langColor: "#3178C6",
@@ -63,10 +66,36 @@ const projects: ProjectItem[] = [
     accent: "from-purple-500/30 to-pink-400/10",
   },
   {
-    id: "real-time-face-recognition",
+    id: "neural-signal-visualizer",
     num: "04",
-    title: "Real-time-face-recongnition",
-    desc: "Real-time face recognition system using OpenCV and LBPH algorithm.",
+    title: "Neural Signal Visualizer",
+    desc: "A high-performance generative particle system visualizing complex neural networks with 24,000+ nodes and 93,000+ real-time connections.",
+    tags: ["Generative Art", "Three.js", "Data Visualization", "Creative Coding"],
+    link: "https://github.com/Bhagyaabbigeri/My_Portfolio/blob/main/public/projects/nebula.png",
+    language: "JavaScript",
+    langColor: "#F1E05A",
+    icon: Zap,
+    accent: "from-emerald-500/30 to-cyan-400/10",
+    image: "/projects/nebula.png",
+  },
+  {
+    id: "vortex-nebula",
+    num: "05",
+    title: "Vortex Nebula",
+    desc: "A conceptual space architecture design for a multi-layered orbital habitat, featuring integrated nebula pavilions and observatories.",
+    tags: ["Space Tech", "Architecture", "Conceptual Design", "3D Visualization"],
+    link: "https://github.com/Bhagyaabbigeri/My_Portfolio/blob/main/public/projects/vortex.png",
+    language: "Conceptual",
+    langColor: "#FFD700",
+    icon: Satellite,
+    accent: "from-blue-600/30 to-purple-500/10",
+    image: "/projects/vortex.png",
+  },
+  {
+    id: "real-time-face-recognition",
+    num: "06",
+    title: "Real-time Face Recognition",
+    desc: "Real-time face recognition system using OpenCV and LBPH algorithm for high-accuracy biometric identification.",
     tags: ["Python", "OpenCV", "LBPH Algorithm", "Face Recognition"],
     link: "https://github.com/Bhagyaabbigeri/Real-time-face-recongnition",
     language: "Python",
@@ -76,9 +105,9 @@ const projects: ProjectItem[] = [
   },
   {
     id: "hackvyuha-03",
-    num: "05",
+    num: "07",
     title: "HackVyuha-03",
-    desc: "Hackathon project (Top 50/150 at BLDEAs HackVyuha).",
+    desc: "Hackathon project that secured a top 50 ranking out of 150 teams at BLDEAs HackVyuha.",
     tags: ["JavaScript", "HTML", "CSS", "Hackathon"],
     link: "https://github.com/Bhagyaabbigeri/HackVyuha-03",
     language: "JavaScript",
@@ -88,27 +117,15 @@ const projects: ProjectItem[] = [
   },
   {
     id: "sde-full-stack",
-    num: "06",
+    num: "08",
     title: "SDE-Full-Stack",
-    desc: "Full-stack development projects from SDE Internship at Algorithms365.",
+    desc: "Full-stack development projects from SDE Internship at Algorithms365, focusing on scalable Java systems.",
     tags: ["Java", "Full Stack", "Spring", "Database"],
     link: "https://github.com/Bhagyaabbigeri/SDE-Full-Stack",
     language: "Java",
     langColor: "#B07219",
     icon: Cpu,
     accent: "from-cyan-500/20 to-violet-400/10",
-  },
-  {
-    id: "vortex-nebula",
-    num: "07",
-    title: "Vortex Nebula",
-    desc: "A conceptual space architecture design for a multi-layered orbital habitat, featuring integrated nebula pavilions, observatories, and galleries optimized for interstellar flow and habitat modularity.",
-    tags: ["Space Tech", "Architecture", "Conceptual Design", "3D Visualization"],
-    link: "https://github.com/Bhagyaabbigeri/My_Portfolio/blob/main/public/projects/vortex.png",
-    language: "Conceptual",
-    langColor: "#FFD700",
-    icon: Satellite,
-    accent: "from-blue-600/30 to-purple-500/10",
   },
 ];
 
@@ -204,6 +221,19 @@ export default function Projects() {
                   whileHover={{ y: -10, scale: 1.02 }}
                   className="group relative rounded-[1.5rem] border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl overflow-hidden flex flex-col cursor-pointer transition-all duration-500 hover:border-white/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                 >
+                  {/* Project Image Preview */}
+                  {project.image && (
+                    <div className="relative w-full h-48 overflow-hidden border-b border-white/5">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    </div>
+                  )}
+
                   {/* Glow on hover */}
                   <div
                     className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-br ${project.accent} pointer-events-none`}
