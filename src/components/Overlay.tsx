@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { MotionValue, motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface OverlayProps {
   scrollYProgress: MotionValue<number>;
@@ -45,9 +46,11 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
             <div className="relative group shrink-0">
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 rounded-2xl overflow-hidden border border-white/10 bg-[#030014]">
-                <img
+                <Image
                   src="/projects/ME.png"
                   alt="Bhagyashree Reddy"
+                  width={128}
+                  height={128}
                   className="w-full h-full object-cover"
                 />
               </div>

@@ -6,7 +6,6 @@ import {
   Code2,
   Satellite,
   Smartphone,
-  BookOpen,
   Cpu,
   Trophy,
   Brain,

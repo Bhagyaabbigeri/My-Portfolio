@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   GraduationCap,
   Trophy,
@@ -10,7 +11,6 @@ import {
   Cloud,
   Cpu,
   Mail,
-  Phone,
   ArrowUpRight,
   Sparkles,
   Terminal,
@@ -103,9 +103,11 @@ export function IntroSection() {
 
           {/* Image Container with Glass Effect */}
           <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a14] shadow-2xl group">
-            <img
+            <Image
               src="/projects/ME.png"
               alt="Bhagyashree Reddy"
+              width={224}
+              height={288}
               className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-110"
             />
             {/* Overlay Gradient */}
@@ -286,7 +288,16 @@ export function EducationSection() {
 }
 
 /* ─── SECTION 3: TECHNICAL SKILLS ─── */
-const skillGroups = [
+interface SkillGroup {
+  category: string;
+  icon: string;
+  glow: string;
+  pillGlow: string;
+  items: string[];
+  link?: string;
+}
+
+const skillGroups: SkillGroup[] = [
   {
     category: "Languages",
     icon: "💻",
@@ -359,15 +370,6 @@ const skillGroups = [
     link: "https://github.com/Bhagyaabbigeri/Certificates",
   },
 ];
-
-const pillVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { type: "spring", stiffness: 300, damping: 20 }
-  }
-};
 
 export function SkillsSection() {
   return (
@@ -529,9 +531,9 @@ export function SkillsSection() {
                </div>
 
                <div className="flex flex-col justify-center gap-3">
-                  {(skillGroups.find(g => g.category === "Certifications") as any)?.link && (
+                  {skillGroups.find(g => g.category === "Certifications")?.link && (
                     <a
-                      href={(skillGroups.find(g => g.category === "Certifications") as any).link}
+                      href={skillGroups.find(g => g.category === "Certifications")?.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-between p-3 rounded-xl bg-orange-500/5 border border-orange-500/20 text-orange-400 hover:bg-orange-500 hover:text-black transition-all group"
