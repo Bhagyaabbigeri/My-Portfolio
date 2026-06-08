@@ -299,52 +299,56 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
           <ArrowUpRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
         </a>
       </div>
-
-      {/* ── LIGHTBOX ── */}
-      <AnimatePresence>
-        {isLightboxOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-2xl flex items-center justify-center p-4 md:p-12"
-          >
-            <button
-              onClick={() => setIsLightboxOpen(false)}
-              className="absolute top-8 right-8 p-3 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white transition-colors hover:bg-red-500/20 hover:border-red-500/50"
-            >
-              <CloseIcon className="w-8 h-8" />
-            </button>
-
-            <div className="relative w-full h-full">
-              <Image
-                src={images[currentImg]}
-                alt={`${project.title} lightbox`}
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            {images.length > 1 && (
-              <>
-                <button
-                  onClick={(e) => { e.stopPropagation(); prevImg(e); }}
-                  className="absolute left-8 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/20 hover:border-orange-500/50 transition-all"
-                >
-                  <LeftIcon className="w-10 h-10" />
-                </button>
-                <button
-                  onClick={(e) => { e.stopPropagation(); nextImg(e); }}
-                  className="absolute right-8 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/20 hover:border-orange-500/50 transition-all"
-                >
-                  <RightIcon className="w-10 h-10" />
-                </button>
-              </>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.div>
+
+    {/* ── LIGHTBOX (MOVED OUTSIDE overflow-hidden container) ── */}
+    <AnimatePresence>
+      {isLightboxOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[500] bg-black/95 backdrop-blur-2xl flex items-center justify-center p-4 md:p-12"
+          onClick={() => setIsLightboxOpen(false)}
+        >
+          <button
+            onClick={(e) => { e.stopPropagation(); setIsLightboxOpen(false); }}
+            className="absolute top-8 right-8 p-4 rounded-full bg-white/10 border border-white/20 text-white hover:bg-red-500/40 hover:border-red-500/50 transition-all z-[510] shadow-2xl"
+          >
+            <CloseIcon className="w-8 h-8" />
+          </button>
+
+          <div className="relative w-full h-full" onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={images[currentImg]}
+              alt={`${project.title} lightbox`}
+              fill
+              className="object-contain"
+            />
+          </div>
+
+          {images.length > 1 && (
+            <>
+              <button
+                onClick={(e) => { e.stopPropagation(); prevImg(e); }}
+                className="absolute left-8 top-1/2 -translate-y-1/2 p-5 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-[510]"
+              >
+                <LeftIcon className="w-10 h-10" />
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); nextImg(e); }}
+                className="absolute right-8 top-1/2 -translate-y-1/2 p-5 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-[510]"
+              >
+                <RightIcon className="w-10 h-10" />
+              </button>
+            </>
+          )}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </>
+  );
+}
   );
 }
 
