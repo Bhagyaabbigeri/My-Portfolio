@@ -11,7 +11,6 @@ import {
   Trophy,
   Brain,
   ArrowUpRight,
-  Zap,
 } from "lucide-react";
 
 interface ProjectItem {
