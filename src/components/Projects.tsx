@@ -25,6 +25,7 @@ interface ProjectItem {
   icon: React.ElementType;
   accent: string;
   image?: string;
+  screenshots?: string[];
 }
 
 const projects: ProjectItem[] = [
@@ -40,6 +41,13 @@ const projects: ProjectItem[] = [
     icon: Satellite,
     accent: "from-cyan-500/30 to-blue-400/10",
     image: "/projects/spacerisk_main1.png",
+    screenshots: [
+      "/projects/spacerisk_main1.png",
+      "/projects/spacerisk_main2.png",
+      "/projects/spacerisk_main3.png",
+      "/projects/spacerisk_main4.png",
+      "/projects/spacerisk_main5.png",
+    ],
   },
   {
     id: "gokulahealth",
@@ -53,6 +61,13 @@ const projects: ProjectItem[] = [
     icon: Smartphone,
     accent: "from-green-500/30 to-emerald-400/10",
     image: "/projects/GokulaHealth-1.png",
+    screenshots: [
+      "/projects/GokulaHealth-1.png",
+      "/projects/GokulaHealth-2.png",
+      "/projects/GokulaHealth-3.png",
+      "/projects/GokulaHealth-4.png",
+      "/projects/GokulaHealth-5.png",
+    ],
   },
   {
     id: "empowerher",
@@ -66,6 +81,13 @@ const projects: ProjectItem[] = [
     icon: Smartphone,
     accent: "from-rose-500/30 to-pink-400/10",
     image: "/projects/EmpowerHer-1.png",
+    screenshots: [
+      "/projects/EmpowerHer-1.png",
+      "/projects/EmpowerHer-2.png",
+      "/projects/EmpowerHer-3.png",
+      "/projects/EmpowerHer-4.png",
+      "/projects/EmpowerHer-5.png",
+    ],
   },
   {
     id: "real-time-face-recognition",
@@ -197,18 +219,37 @@ export default function Projects() {
                   whileHover={{ y: -10, scale: 1.02 }}
                   className="group relative rounded-[1.5rem] border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl overflow-hidden flex flex-col cursor-pointer transition-all duration-500 hover:border-white/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                 >
-                  {/* Project Image Preview */}
-                  {project.image && (
-                    <div className="relative w-full h-48 overflow-hidden border-b border-white/5">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    </div>
-                  )}
+                  {/* Project Image Preview & Screenshots */}
+                  <div className="relative w-full overflow-hidden border-b border-white/5 flex flex-col">
+                    {/* Main Image */}
+                    {project.image && (
+                      <div className="relative w-full h-52 overflow-hidden">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      </div>
+                    )}
+
+                    {/* Screenshots Ribbon */}
+                    {project.screenshots && (
+                      <div className="flex gap-1 p-2 bg-black/40 overflow-x-auto no-scrollbar scroll-smooth">
+                        {project.screenshots.map((s, i) => (
+                          <div key={i} className="relative w-20 h-14 flex-shrink-0 rounded-md overflow-hidden border border-white/10 hover:border-orange-500/50 transition-colors cursor-zoom-in">
+                            <Image
+                              src={s}
+                              alt={`${project.title} screenshot ${i+1}`}
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
 
                   {/* Glow on hover */}
                   <div
