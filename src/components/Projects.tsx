@@ -11,9 +11,6 @@ import {
   Trophy,
   Brain,
   ArrowUpRight,
-  ChevronLeft,
-  ChevronRight,
-  X,
 } from "lucide-react";
 
 /* ─── Custom Icons for compatibility ─── */
@@ -182,173 +179,172 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, delay: index * 0.1 }}
-      className="relative w-full max-w-6xl mx-auto rounded-[2.5rem] border border-white/10 bg-white/[0.01] backdrop-blur-xl overflow-hidden mb-20 md:mb-32 flex flex-col shadow-2xl group"
-    >
-      {/* Background Glow */}
-      <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 bg-gradient-to-br ${project.accent} pointer-events-none`} />
+    <>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, delay: index * 0.1 }}
+        className="relative w-full max-w-6xl mx-auto rounded-[2.5rem] border border-white/10 bg-white/[0.01] backdrop-blur-xl overflow-hidden mb-20 md:mb-32 flex flex-col shadow-2xl group"
+      >
+        {/* Background Glow */}
+        <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 bg-gradient-to-br ${project.accent} pointer-events-none`} />
 
-      {/* ── CARD HEADER ── */}
-      <div className="p-6 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-white/5 relative z-10">
-        <div className="flex items-center gap-5">
-          <div className={`p-4 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 text-orange-400 group-hover:text-white group-hover:bg-orange-500/20 transition-all duration-500 shadow-inner`}>
-            <Icon className="w-8 h-8" />
+        {/* ── CARD HEADER ── */}
+        <div className="p-6 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-white/5 relative z-10">
+          <div className="flex items-center gap-5">
+            <div className={`p-4 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 text-orange-400 group-hover:text-white group-hover:bg-orange-500/20 transition-all duration-500 shadow-inner`}>
+              <Icon className="w-8 h-8" />
+            </div>
+            <div className="space-y-1">
+              <div className="flex items-center gap-3">
+                <span className="text-zinc-600 font-mono text-xs font-bold tracking-widest">{project.num}</span>
+                <h3 className="text-2xl md:text-4xl font-black tracking-tight text-white group-hover:text-orange-200 transition-colors duration-300">
+                  {project.title}
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="px-2.5 py-0.5 rounded-md bg-white/[0.03] border border-white/[0.08] text-[10px] text-zinc-500 font-mono group-hover:border-orange-500/20 group-hover:text-orange-300 transition-all duration-300 uppercase tracking-wider">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="space-y-1">
-            <div className="flex items-center gap-3">
-              <span className="text-zinc-600 font-mono text-xs font-bold tracking-widest">{project.num}</span>
-              <h3 className="text-2xl md:text-4xl font-black tracking-tight text-white group-hover:text-orange-200 transition-colors duration-300">
-                {project.title}
-              </h3>
-            </div>
-            <div className="flex flex-wrap gap-2 pt-1">
-              {project.tags.map((tag) => (
-                <span key={tag} className="px-2.5 py-0.5 rounded-md bg-white/[0.03] border border-white/[0.08] text-[10px] text-zinc-500 font-mono group-hover:border-orange-500/20 group-hover:text-orange-300 transition-all duration-300 uppercase tracking-wider">
-                  {tag}
-                </span>
-              ))}
-            </div>
+
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-[11px] text-zinc-400 font-mono font-bold tracking-widest uppercase self-start md:self-auto shadow-sm">
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: project.langColor }} />
+            {project.language}
           </div>
         </div>
 
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-[11px] text-zinc-400 font-mono font-bold tracking-widest uppercase self-start md:self-auto shadow-sm">
-          <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: project.langColor }} />
-          {project.language}
-        </div>
-      </div>
-
-      {/* ── IMAGE SHOWCASE (SLIDER) ── */}
-      <div className="relative w-full aspect-video min-h-[350px] md:min-h-[500px] overflow-hidden bg-black/40 group/slider">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentImg}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute inset-0 cursor-zoom-in"
-            onClick={() => setIsLightboxOpen(true)}
-          >
-            <Image
-              src={images[currentImg]}
-              alt={`${project.title} showcase ${currentImg + 1}`}
-              fill
-              className="object-contain p-4 md:p-8"
-              priority
-            />
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Navigation Arrows */}
-        {images.length > 1 && (
-          <>
-            <button
-              onClick={prevImg}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-20 backdrop-blur-md opacity-0 group-hover/slider:opacity-100"
+        {/* ── IMAGE SHOWCASE (SLIDER) ── */}
+        <div className="relative w-full aspect-video min-h-[350px] md:min-h-[500px] overflow-hidden bg-black/40 group/slider">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentImg}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="absolute inset-0 cursor-zoom-in"
+              onClick={() => setIsLightboxOpen(true)}
             >
-              <LeftIcon className="w-6 h-6" />
-            </button>
-            <button
-              onClick={nextImg}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-20 backdrop-blur-md opacity-0 group-hover/slider:opacity-100"
-            >
-              <RightIcon className="w-6 h-6" />
-            </button>
+              <Image
+                src={images[currentImg]}
+                alt={`${project.title} showcase ${currentImg + 1}`}
+                fill
+                className="object-contain p-4 md:p-8"
+                priority
+              />
+            </motion.div>
+          </AnimatePresence>
 
-            {/* Dots Indicator */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-              {images.map((_, i) => (
-                <div
-                  key={i}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    i === currentImg ? "w-8 bg-orange-500" : "w-1.5 bg-white/20"
-                  }`}
-                />
-              ))}
-            </div>
-          </>
-        )}
-      </div>
-
-      {/* ── CARD FOOTER ── */}
-      <div className="p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-10 relative z-10 bg-gradient-to-b from-transparent to-black/20">
-        <div className="space-y-6 flex-1">
-          <div className="space-y-3">
-            <h4 className="text-orange-400 font-mono text-[10px] font-bold uppercase tracking-[0.3em] flex items-center gap-2">
-              <Code2 className="w-4 h-4" />
-              Project Intel
-            </h4>
-            <p className="text-zinc-300 text-sm md:text-lg leading-relaxed font-light max-w-3xl">
-              {project.desc}
-            </p>
-          </div>
-        </div>
-
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group/btn relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-orange-500/5 border border-orange-500/20 text-xs md:text-sm font-bold text-orange-400 tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 hover:bg-orange-500 hover:text-black hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] whitespace-nowrap"
-        >
-          <GithubIcon className="w-4 h-4 relative z-10" />
-          <span className="relative z-10">Deploy Artifact</span>
-          <ArrowUpRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-        </a>
-      </div>
-    </motion.div>
-
-    {/* ── LIGHTBOX (MOVED OUTSIDE overflow-hidden container) ── */}
-    <AnimatePresence>
-      {isLightboxOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[500] bg-black/95 backdrop-blur-2xl flex items-center justify-center p-4 md:p-12"
-          onClick={() => setIsLightboxOpen(false)}
-        >
-          <button
-            onClick={(e) => { e.stopPropagation(); setIsLightboxOpen(false); }}
-            className="absolute top-8 right-8 p-4 rounded-full bg-white/10 border border-white/20 text-white hover:bg-red-500/40 hover:border-red-500/50 transition-all z-[510] shadow-2xl"
-          >
-            <CloseIcon className="w-8 h-8" />
-          </button>
-
-          <div className="relative w-full h-full" onClick={(e) => e.stopPropagation()}>
-            <Image
-              src={images[currentImg]}
-              alt={`${project.title} lightbox`}
-              fill
-              className="object-contain"
-            />
-          </div>
-
+          {/* Navigation Arrows */}
           {images.length > 1 && (
             <>
               <button
-                onClick={(e) => { e.stopPropagation(); prevImg(e); }}
-                className="absolute left-8 top-1/2 -translate-y-1/2 p-5 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-[510]"
+                onClick={prevImg}
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-20 backdrop-blur-md opacity-0 group-hover/slider:opacity-100"
               >
-                <LeftIcon className="w-10 h-10" />
+                <LeftIcon className="w-6 h-6" />
               </button>
               <button
-                onClick={(e) => { e.stopPropagation(); nextImg(e); }}
-                className="absolute right-8 top-1/2 -translate-y-1/2 p-5 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-[510]"
+                onClick={nextImg}
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-20 backdrop-blur-md opacity-0 group-hover/slider:opacity-100"
               >
-                <RightIcon className="w-10 h-10" />
+                <RightIcon className="w-6 h-6" />
               </button>
+
+              {/* Dots Indicator */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                {images.map((_, i) => (
+                  <div
+                    key={i}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      i === currentImg ? "w-8 bg-orange-500" : "w-1.5 bg-white/20"
+                    }`}
+                  />
+                ))}
+              </div>
             </>
           )}
-        </motion.div>
-      )}
-    </AnimatePresence>
-  </>
-  );
-}
+        </div>
+
+        {/* ── CARD FOOTER ── */}
+        <div className="p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-10 relative z-10 bg-gradient-to-b from-transparent to-black/20">
+          <div className="space-y-6 flex-1">
+            <div className="space-y-3">
+              <h4 className="text-orange-400 font-mono text-[10px] font-bold uppercase tracking-[0.3em] flex items-center gap-2">
+                <Code2 className="w-4 h-4" />
+                Project Intel
+              </h4>
+              <p className="text-zinc-300 text-sm md:text-lg leading-relaxed font-light max-w-3xl">
+                {project.desc}
+              </p>
+            </div>
+          </div>
+
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/btn relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-orange-500/5 border border-orange-500/20 text-xs md:text-sm font-bold text-orange-400 tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 hover:bg-orange-500 hover:text-black hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] whitespace-nowrap"
+          >
+            <GithubIcon className="w-4 h-4 relative z-10" />
+            <span className="relative z-10">Deploy Artifact</span>
+            <ArrowUpRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+          </a>
+        </div>
+      </motion.div>
+
+      {/* ── LIGHTBOX (MOVED OUTSIDE overflow-hidden container) ── */}
+      <AnimatePresence>
+        {isLightboxOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[500] bg-black/95 backdrop-blur-2xl flex items-center justify-center p-4 md:p-12"
+            onClick={() => setIsLightboxOpen(false)}
+          >
+            <button
+              onClick={(e) => { e.stopPropagation(); setIsLightboxOpen(false); }}
+              className="absolute top-8 right-8 p-4 rounded-full bg-white/10 border border-white/20 text-white hover:bg-red-500/40 hover:border-red-500/50 transition-all z-[510] shadow-2xl"
+            >
+              <CloseIcon className="w-8 h-8" />
+            </button>
+
+            <div className="relative w-full h-full" onClick={(e) => e.stopPropagation()}>
+              <Image
+                src={images[currentImg]}
+                alt={`${project.title} lightbox`}
+                fill
+                className="object-contain"
+              />
+            </div>
+
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => { e.stopPropagation(); prevImg(e); }}
+                  className="absolute left-8 top-1/2 -translate-y-1/2 p-5 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-[510]"
+                >
+                  <LeftIcon className="w-10 h-10" />
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); nextImg(e); }}
+                  className="absolute right-8 top-1/2 -translate-y-1/2 p-5 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-[510]"
+                >
+                  <RightIcon className="w-10 h-10" />
+                </button>
+              </>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
