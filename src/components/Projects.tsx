@@ -11,11 +11,41 @@ import {
   Trophy,
   Brain,
   ArrowUpRight,
-  ChevronLeft,
-  ChevronRight,
-  X,
-  Github,
 } from "lucide-react";
+
+/* ─── Custom Icons for compatibility ─── */
+function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+      <path d="M9 18c-4.51 2-5-2-7-2" />
+    </svg>
+  );
+}
+
+function CloseIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  );
+}
+
+function LeftIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <polyline points="15 18 9 12 15 6" />
+    </svg>
+  );
+}
+
+function RightIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <polyline points="9 18 15 12 9 6" />
+    </svg>
+  );
+}
 
 interface ProjectItem {
   id: string;
@@ -217,13 +247,13 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
               onClick={prevImg}
               className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-20 backdrop-blur-md opacity-0 group-hover/slider:opacity-100"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <LeftIcon className="w-6 h-6" />
             </button>
             <button
               onClick={nextImg}
               className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-20 backdrop-blur-md opacity-0 group-hover/slider:opacity-100"
             >
-              <ChevronRight className="w-6 h-6" />
+              <RightIcon className="w-6 h-6" />
             </button>
 
             {/* Dots Indicator */}
@@ -261,7 +291,7 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
           rel="noopener noreferrer"
           className="group/btn relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-orange-500/5 border border-orange-500/20 text-xs md:text-sm font-bold text-orange-400 tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 hover:bg-orange-500 hover:text-black hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] whitespace-nowrap"
         >
-          <Github className="w-4 h-4 relative z-10" />
+          <GithubIcon className="w-4 h-4 relative z-10" />
           <span className="relative z-10">Deploy Artifact</span>
           <ArrowUpRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
         </a>
@@ -280,7 +310,7 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
               onClick={() => setIsLightboxOpen(false)}
               className="absolute top-8 right-8 p-3 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white transition-colors hover:bg-red-500/20 hover:border-red-500/50"
             >
-              <X className="w-8 h-8" />
+              <CloseIcon className="w-8 h-8" />
             </button>
 
             <div className="relative w-full h-full">
@@ -298,13 +328,13 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
                   onClick={(e) => { e.stopPropagation(); prevImg(e); }}
                   className="absolute left-8 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/20 hover:border-orange-500/50 transition-all"
                 >
-                  <ChevronLeft className="w-10 h-10" />
+                  <LeftIcon className="w-10 h-10" />
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); nextImg(e); }}
                   className="absolute right-8 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/20 hover:border-orange-500/50 transition-all"
                 >
-                  <ChevronRight className="w-10 h-10" />
+                  <RightIcon className="w-10 h-10" />
                 </button>
               </>
             )}
