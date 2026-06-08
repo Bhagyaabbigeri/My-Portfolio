@@ -98,6 +98,18 @@ const projects: ProjectItem[] = [
     icon: Cpu,
     accent: "from-cyan-500/20 to-violet-400/10",
   },
+  {
+    id: "vortex-nebula",
+    num: "07",
+    title: "Vortex Nebula",
+    desc: "A conceptual space architecture design for a multi-layered orbital habitat, featuring integrated nebula pavilions, observatories, and galleries optimized for interstellar flow and habitat modularity.",
+    tags: ["Space Tech", "Architecture", "Conceptual Design", "3D Visualization"],
+    link: "https://github.com/Bhagyaabbigeri/My_Portfolio/blob/main/public/projects/vortex.png",
+    language: "Conceptual",
+    langColor: "#FFD700",
+    icon: Satellite,
+    accent: "from-blue-600/30 to-purple-500/10",
+  },
 ];
 
 
