@@ -219,31 +219,35 @@ export default function Projects() {
                   whileHover={{ y: -10, scale: 1.02 }}
                   className="group relative rounded-[1.5rem] border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl overflow-hidden flex flex-col cursor-pointer transition-all duration-500 hover:border-white/20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                 >
-                  {/* Project Image Preview & Screenshots */}
-                  <div className="relative w-full overflow-hidden border-b border-white/5 flex flex-col">
-                    {/* Main Image */}
+                  {/* Project Image Preview & Full Gallery Grid */}
+                  <div className="relative w-full overflow-hidden border-b border-white/5 flex flex-col gap-1 bg-black/20">
+                    {/* Main Featured Image */}
                     {project.image && (
-                      <div className="relative w-full h-52 overflow-hidden">
+                      <div className="relative w-full h-64 md:h-72 overflow-hidden">
                         <Image
                           src={project.image}
                           alt={project.title}
                           fill
-                          className="object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-110"
+                          className="object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                       </div>
                     )}
 
-                    {/* Screenshots Ribbon */}
+                    {/* Full 5-Image Grid */}
                     {project.screenshots && (
-                      <div className="flex gap-1 p-2 bg-black/40 overflow-x-auto no-scrollbar scroll-smooth">
+                      <div className="grid grid-cols-5 gap-1.5 p-2 bg-white/[0.02]">
                         {project.screenshots.map((s, i) => (
-                          <div key={i} className="relative w-20 h-14 flex-shrink-0 rounded-md overflow-hidden border border-white/10 hover:border-orange-500/50 transition-colors cursor-zoom-in">
+                          <div
+                            key={i}
+                            className={`relative overflow-hidden rounded-lg border border-white/10 hover:border-orange-500/50 transition-all duration-300 cursor-zoom-in group/img
+                              ${project.id === 'spacerisk-radar' ? 'aspect-video' : 'aspect-[9/19]'}`}
+                          >
                             <Image
                               src={s}
-                              alt={`${project.title} screenshot ${i+1}`}
+                              alt={`${project.title} detail ${i+1}`}
                               fill
-                              className="object-cover"
+                              className="object-cover group-hover/img:scale-110 transition-transform duration-500"
                             />
                           </div>
                         ))}
