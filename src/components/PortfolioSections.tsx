@@ -179,6 +179,16 @@ export function IntroSection() {
 export function EducationSection() {
   return (
     <section id="education" className="relative w-full bg-[#030014] px-6 py-14 md:py-20 z-20 overflow-hidden">
+      {/* Background Asset Accent */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] opacity-[0.03] blur-3xl pointer-events-none select-none">
+        <Image
+          src="/projects/synapse.png"
+          alt="Neural Asset"
+          fill
+          className="object-contain"
+        />
+      </div>
+
       {/* Background radial glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-cyan-500/5 blur-[120px] pointer-events-none" />
       <div className="absolute top-0 right-1/4 w-[400px] h-[400px] rounded-full bg-orange-500/5 blur-[100px] pointer-events-none" />
@@ -374,6 +384,16 @@ const skillGroups: SkillGroup[] = [
 export function SkillsSection() {
   return (
     <section id="skills" className="relative w-full bg-[#030014] px-6 py-14 md:py-20 z-20 overflow-hidden">
+      {/* Decorative Background Asset */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-6xl opacity-[0.08] blur-[80px] pointer-events-none select-none overflow-hidden">
+        <Image
+          src="/projects/nebula.png"
+          alt="Neural Network Background"
+          fill
+          className="object-contain"
+        />
+      </div>
+
       {/* Background radial glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-cyan-500/5 blur-[120px] pointer-events-none" />
 
@@ -771,6 +791,16 @@ const achievementItems = [
 export function AchievementsSection() {
   return (
     <section id="achievements" className="relative w-full bg-[#030014] px-6 py-14 md:py-20 z-20 overflow-hidden flex flex-col items-center">
+      {/* Decorative Background Asset */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-6xl opacity-[0.06] blur-[100px] pointer-events-none select-none overflow-hidden">
+        <Image
+          src="/projects/vortex.png"
+          alt="Orbital Background"
+          fill
+          className="object-contain"
+        />
+      </div>
+
       {/* Cinematic Background Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-violet-600/[0.03] blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-cyan-500/[0.02] to-transparent pointer-events-none" />
