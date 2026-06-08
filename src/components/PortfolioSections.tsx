@@ -875,6 +875,96 @@ export function AchievementsSection() {
   );
 }
 
+export function BlueprintSection() {
+  const annotations = [
+    { title: "Nebula Pavilion", desc: "A semi-enclosed social hub designed for star-gazing and community gatherings.", color: "text-purple-400", border: "border-purple-500/30" },
+    { title: "Cyan Observatory", desc: "Equipped with advanced multi-spectral telescopes for deep-space research.", color: "text-cyan-400", border: "border-cyan-500/30" },
+    { title: "Cosmic Promenade", desc: "A gravity-optimized walkway connecting major habitat sectors with panoramic views.", color: "text-violet-400", border: "border-violet-500/30" },
+    { title: "Golden Plaza", desc: "The central energy and light distribution node of the habitat structure.", color: "text-amber-400", border: "border-amber-500/30" },
+    { title: "Habitat Modules", desc: "Self-sustaining biological pods for long-term interstellar residency.", color: "text-orange-400", border: "border-orange-500/30" },
+    { title: "Circulation Spine", desc: "The primary structural and transit artery enabling fluid movement between levels.", color: "text-zinc-400", border: "border-zinc-500/30" },
+  ];
+
+  return (
+    <section id="blueprint" className="relative w-full bg-[#030014] px-6 py-14 md:py-24 z-20 overflow-hidden">
+      {/* Background radial glows */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-violet-600/[0.03] blur-[150px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto space-y-16 relative z-10">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUpVariants}
+          className="text-center space-y-4"
+        >
+          <div className="space-y-2">
+            <h2 className="text-sm md:text-base font-mono font-bold tracking-[0.3em] text-orange-400 uppercase">
+              DESIGN BLUEPRINT
+            </h2>
+            <div className="h-[2px] w-20 bg-gradient-to-r from-orange-500 to-transparent mx-auto" />
+          </div>
+          <h2 className="text-3xl md:text-6xl font-black tracking-tight text-white leading-tight">
+            Vortex Nebula <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-violet-400">Architecture</span>
+          </h2>
+          <p className="text-zinc-400 max-w-2xl mx-auto text-xs md:text-sm font-light tracking-wide leading-relaxed">
+            A comprehensive mapping of the multi-layered orbital habitat, showcasing the integration of research observatories, social pavilions, and sustainable habitat modules.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Annotated Image Column */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 relative group"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-violet-600/20 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000" />
+            <div className="relative rounded-[2rem] border border-white/10 bg-black/40 overflow-hidden shadow-2xl">
+              <Image
+                src="/projects/vortex_blueprint.png"
+                alt="Vortex Nebula Blueprint"
+                width={1200}
+                height={1200}
+                className="w-full h-auto opacity-90 group-hover:opacity-100 transition-opacity duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#030014]/40 via-transparent to-transparent pointer-events-none" />
+            </div>
+          </motion.div>
+
+          {/* Annotations List Column */}
+          <div className="lg:col-span-5 grid grid-cols-1 gap-4">
+            {annotations.map((item, idx) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, duration: 0.8 }}
+                className={`group p-5 rounded-2xl border ${item.border} bg-white/[0.01] backdrop-blur-md hover:bg-white/[0.03] transition-all duration-300`}
+              >
+                <div className="flex items-start gap-4">
+                  <div className={`mt-1.5 w-2 h-2 rounded-full shrink-0 shadow-[0_0_10px_currentColor] ${item.color}`} />
+                  <div className="space-y-1">
+                    <h3 className={`text-sm md:text-base font-bold tracking-tight ${item.color}`}>
+                      {item.title}
+                    </h3>
+                    <p className="text-zinc-500 text-[10px] md:text-xs font-light leading-relaxed group-hover:text-zinc-300 transition-colors">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── SECTION 7: CONTACT ─── */
 const contactButtons = [
   {

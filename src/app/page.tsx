@@ -11,6 +11,7 @@ import {
   SkillsSection,
   ExperienceSection,
   AchievementsSection,
+  BlueprintSection,
   ContactSection,
 } from "@/components/PortfolioSections";
 
@@ -23,6 +24,7 @@ export default function Home() {
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
+    { name: "Blueprint", href: "#blueprint" },
     { name: "Achievements", href: "#achievements" },
     { name: "Contact", href: "#contact" },
   ];
@@ -123,6 +125,9 @@ export default function Home() {
 
         {/* SECTION 5 — PROJECTS */}
         <Projects />
+
+        {/* SECTION 5.5 — BLUEPRINT */}
+        <BlueprintSection />
 
         {/* SECTION 6 — ACHIEVEMENTS */}
         <AchievementsSection />
