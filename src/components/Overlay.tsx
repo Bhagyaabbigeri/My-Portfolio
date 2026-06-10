@@ -93,7 +93,7 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
             transition={{ duration: 2, ease: "easeOut", delay: 1 }}
             className="fixed z-[80] pointer-events-none flex flex-col items-center"
             style={{
-              top: "88%",
+              top: "48%",
               left: imageLayout && imageLayout.dw > 0
                 ? `${imageLayout.dx + imageLayout.dw / 2}px`
                 : "50%",
