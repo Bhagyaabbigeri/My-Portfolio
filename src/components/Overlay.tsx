@@ -82,8 +82,9 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-            className="fixed bottom-36 md:bottom-10 left-1/2 -translate-x-1/2 z-[80] flex flex-col items-center pointer-events-none w-full max-w-2xl px-6"
+            className="fixed top-[68%] left-1/2 -translate-x-1/2 z-[80] flex flex-col items-center pointer-events-none w-full max-w-2xl px-6"
           >
+            <div className="md:hidden absolute inset-0 bg-black/30 backdrop-blur-md rounded-2xl -z-10" />
             <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-orange-500/60 to-transparent mb-3 shadow-[0_0_8px_rgba(249,115,22,0.4)]" />
             <p className="text-zinc-100/90 text-[11px] sm:text-lg md:text-xl font-light italic tracking-widest text-center"
                style={{ textShadow: "0 0-15px rgba(249,115,22,0.35)" }}>
