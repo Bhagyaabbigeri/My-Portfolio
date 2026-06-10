@@ -77,20 +77,32 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
       {/* ── Block 0 Quote · Bottom Center ── */}
       <AnimatePresence>
         {activeBlock === 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-            className="fixed top-[48%] left-1/2 -translate-x-1/2 z-[80] pointer-events-none"
-          >
-            <div className="relative px-6 py-2 md:px-10 md:py-3 rounded-full bg-black/40 backdrop-blur-md border border-white/10 shadow-2xl flex items-center justify-center">
-              <p className="text-white text-[10px] sm:text-lg md:text-xl font-light italic tracking-widest text-center whitespace-nowrap"
-                 style={{ textShadow: "0 0 20px rgba(0,0,0,0.5)" }}>
-                And She once looked at the sky, dreaming beyond limits!
+          <>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -10 }}
+              transition={{ duration: 2, ease: "easeOut", delay: 1 }}
+              className="fixed top-[38%] left-6 md:left-[10%] lg:left-[18%] z-[80] pointer-events-none max-w-[250px]"
+            >
+              <p className="text-white/90 text-[10px] sm:text-lg md:text-xl font-light italic tracking-widest text-left"
+                 style={{ textShadow: "0 0 15px rgba(255,255,255,0.6)" }}>
+                And She once looked at the sky,
               </p>
-            </div>
-          </motion.div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
+              transition={{ duration: 2, ease: "easeOut", delay: 1 }}
+              className="fixed top-[38%] right-6 md:right-[10%] lg:right-[18%] z-[80] pointer-events-none max-w-[250px]"
+            >
+              <p className="text-white/90 text-[10px] sm:text-lg md:text-xl font-light italic tracking-widest text-right"
+                 style={{ textShadow: "0 0 15px rgba(255,255,255,0.6)" }}>
+                dreaming beyond limits!
+              </p>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
 
