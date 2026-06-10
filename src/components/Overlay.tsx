@@ -82,10 +82,10 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[80] flex flex-col items-center pointer-events-none w-full max-w-2xl px-6"
+            className="fixed bottom-36 md:bottom-10 left-1/2 -translate-x-1/2 z-[80] flex flex-col items-center pointer-events-none w-full max-w-2xl px-6"
           >
             <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-orange-500/60 to-transparent mb-3 shadow-[0_0_8px_rgba(249,115,22,0.4)]" />
-            <p className="text-zinc-100/90 text-[10px] sm:text-lg md:text-xl font-light italic tracking-widest text-center"
+            <p className="text-zinc-100/90 text-[11px] sm:text-lg md:text-xl font-light italic tracking-widest text-center"
                style={{ textShadow: "0 0-15px rgba(249,115,22,0.35)" }}>
               And She once looked at the sky, dreaming beyond limits!
             </p>
