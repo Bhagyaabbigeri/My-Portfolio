@@ -86,42 +86,27 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
       {/* ── Block 0 Quote · Bottom Center ── */}
       <AnimatePresence>
         {activeBlock === 0 && (
-          <>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -10 }}
-              transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-              className="fixed top-[38%] z-[80] pointer-events-none max-w-[120px] sm:max-w-[200px] md:max-w-[280px]"
-              style={{
-                left: imageLayout && imageLayout.dw > 0
-                  ? `${imageLayout.dx + (viewportWidth < 768 ? 12 : 40)}px`
-                  : "4%",
-              }}
-            >
-              <p className="text-white/90 text-[10px] sm:text-lg md:text-xl font-light italic tracking-widest text-left"
-                 style={{ textShadow: "0 0 15px rgba(255,255,255,0.6)" }}>
-                And She once looked at the sky,
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 10 }}
-              transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-              className="fixed top-[38%] z-[80] pointer-events-none max-w-[120px] sm:max-w-[200px] md:max-w-[280px]"
-              style={{
-                right: imageLayout && imageLayout.dw > 0
-                  ? `${(viewportWidth - (imageLayout.dx + imageLayout.dw)) + (viewportWidth < 768 ? 12 : 40)}px`
-                  : "4%",
-              }}
-            >
-              <p className="text-white/90 text-[10px] sm:text-lg md:text-xl font-light italic tracking-widest text-right"
-                 style={{ textShadow: "0 0 15px rgba(255,255,255,0.6)" }}>
-                dreaming beyond limits!
-              </p>
-            </motion.div>
-          </>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 2, ease: "easeOut", delay: 1 }}
+            className="fixed z-[80] pointer-events-none flex flex-col items-center"
+            style={{
+              top: "88%",
+              left: imageLayout && imageLayout.dw > 0
+                ? `${imageLayout.dx + imageLayout.dw / 2}px`
+                : "50%",
+              transform: "translateX(-50%)",
+              width: imageLayout && imageLayout.dw > 0 ? `${imageLayout.dw * 0.9}px` : "90%",
+            }}
+          >
+            <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-orange-500/60 to-transparent mb-3 shadow-[0_0_8px_rgba(249,115,22,0.4)]" />
+            <p className="text-white text-[11px] sm:text-lg md:text-xl font-light italic tracking-widest text-center"
+               style={{ textShadow: "0 0 15px rgba(255,255,255,0.5)" }}>
+              And She once looked at the sky, dreaming beyond limits!
+            </p>
+          </motion.div>
         )}
       </AnimatePresence>
 
