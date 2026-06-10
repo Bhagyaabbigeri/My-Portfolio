@@ -256,7 +256,7 @@ export function EducationSection() {
               <div className="space-y-1">
                 <span className="text-zinc-600 font-mono text-[10px] uppercase tracking-[0.2em]">Academic Program</span>
                 <p className="text-orange-200 text-sm md:text-lg font-bold tracking-wide italic">
-                  Bachelor of Engineering in Computer Science
+                  Bachelor of Technology in Computer Science
                 </p>
               </div>
             </div>
@@ -756,7 +756,7 @@ const achievementItems = [
   {
     icon: Medal,
     title: "Top 50 out of 150 Teams — BLDEAs HackVyuha Hackathon",
-    desc: "Secured a top-tier ranking in a highly competitive state-level hackathon.",
+    desc: "Secured a top-tier ranking in a highly competitive national-level hackathon.",
     accent: "from-cyan-500/20 to-blue-500/5",
     accentBorder: "group-hover:border-cyan-500/30",
     iconColor: "text-cyan-400",

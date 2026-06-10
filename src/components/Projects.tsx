@@ -67,20 +67,24 @@ const projects: ProjectItem[] = [
     id: "spacerisk-radar",
     num: "01",
     title: "SpaceRisk-Radar",
-    desc: "A high-fidelity Space Situational Awareness platform. Features real-time SGP4/SDP4 propagation for 2,000+ satellites, conjunction threat detection, and advanced risk layers including debris cloud tracking and collision probability heatmaps.",
-    tags: ["Python", "Flask", "SGP4", "Three.js", "Socket.IO", "Telemetry", "SSA"],
+    desc: "A high-fidelity Space Situational Awareness (SSA) platform. Features real-time SGP4/SDP4 propagation for 2,000+ satellites, automated conjunction threat detection, and advanced risk layers including debris cloud tracking, chain probability analysis, and collision heatmaps. Includes ground visibility link diagnostics and real-time velocity vector tracking.",
+    tags: ["Python", "Flask", "SGP4", "Three.js", "Socket.IO", "SSA", "Orbital Mechanics", "Telemetry"],
     link: "https://github.com/Bhagyaabbigeri/SpaceRisk-Radar",
     language: "Python",
     langColor: "#3572A5",
     icon: Satellite,
     accent: "from-cyan-500/30 to-blue-400/10",
-    image: "/projects/spacerisk_main1.png",
+    image: "/projects/screenshots/SpaceRisk-Rader1.png",
     screenshots: [
-      "/projects/spacerisk_main1.png",
-      "/projects/spacerisk_main2.png",
-      "/projects/spacerisk_main3.png",
-      "/projects/spacerisk_main4.png",
-      "/projects/spacerisk_main5.png",
+      "/projects/screenshots/SpaceRisk-Rader1.png",
+      "/projects/screenshots/SpaceRisk-Rader2.png",
+      "/projects/screenshots/SpaceRisk-Rader3.png",
+      "/projects/screenshots/SpaceRisk-Rader4.png",
+      "/projects/screenshots/SpaceRisk-Rader5.png",
+      "/projects/screenshots/SpaceRisk-Rader6.png",
+      "/projects/screenshots/SpaceRisk-Rader7.png",
+      "/projects/screenshots/SpaceRisk-Rader8.png",
+      "/projects/screenshots/SpaceRisk-Rader9.png",
     ],
   },
   {
@@ -94,13 +98,14 @@ const projects: ProjectItem[] = [
     langColor: "#A97BFF",
     icon: Smartphone,
     accent: "from-green-500/30 to-emerald-400/10",
-    image: "/projects/GokulaHealth-1.png",
+    image: "/projects/screenshots/GokulaHealth1.jpg",
     screenshots: [
-      "/projects/GokulaHealth-1.png",
-      "/projects/GokulaHealth-2.png",
-      "/projects/GokulaHealth-3.png",
-      "/projects/GokulaHealth-4.png",
-      "/projects/GokulaHealth-5.png",
+      "/projects/screenshots/GokulaHealth1.jpg",
+      "/projects/screenshots/GokulaHealth2.jpg",
+      "/projects/screenshots/GokulaHealth3.jpg",
+      "/projects/screenshots/GokulaHealth4.jpg",
+      "/projects/screenshots/GokulaHealth5.jpg",
+      "/projects/screenshots/GokulaHealth6.jpg",
     ],
   },
   {
@@ -114,13 +119,15 @@ const projects: ProjectItem[] = [
     langColor: "#3178C6",
     icon: Smartphone,
     accent: "from-rose-500/30 to-pink-400/10",
-    image: "/projects/EmpowerHer-1.png",
+    image: "/projects/screenshots/EmpowerHer1.png",
     screenshots: [
-      "/projects/EmpowerHer-1.png",
-      "/projects/EmpowerHer-2.png",
-      "/projects/EmpowerHer-3.png",
-      "/projects/EmpowerHer-4.png",
-      "/projects/EmpowerHer-5.png",
+      "/projects/screenshots/EmpowerHer1.png",
+      "/projects/screenshots/EmpowerHer2.png",
+      "/projects/screenshots/EmpowerHer3.png",
+      "/projects/screenshots/EmpowerHer4.png",
+      "/projects/screenshots/EmpowerHer5.png",
+      "/projects/screenshots/EmpowerHer6.png",
+      "/projects/screenshots/EmpowerHer7.png",
     ],
   },
   {
@@ -191,21 +198,21 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
         <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 bg-gradient-to-br ${project.accent} pointer-events-none`} />
 
         {/* ── CARD HEADER ── */}
-        <div className="p-6 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-white/5 relative z-10">
+        <div className="p-5 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6 border-b border-white/5 relative z-10">
           <div className="flex items-center gap-5">
-            <div className={`p-4 rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 text-orange-400 group-hover:text-white group-hover:bg-orange-500/20 transition-all duration-500 shadow-inner`}>
-              <Icon className="w-8 h-8" />
+            <div className={`p-3 md:p-4 rounded-xl md:rounded-2xl bg-gradient-to-br from-white/10 to-transparent border border-white/10 text-orange-400 group-hover:text-white group-hover:bg-orange-500/20 transition-all duration-500 shadow-inner`}>
+              <Icon className="w-6 h-6 md:w-8 md:h-8" />
             </div>
             <div className="space-y-1">
               <div className="flex items-center gap-3">
-                <span className="text-zinc-600 font-mono text-xs font-bold tracking-widest">{project.num}</span>
-                <h3 className="text-2xl md:text-4xl font-black tracking-tight text-white group-hover:text-orange-200 transition-colors duration-300">
+                <span className="text-zinc-600 font-mono text-[10px] md:text-xs font-bold tracking-widest">{project.num}</span>
+                <h3 className="text-xl md:text-4xl font-black tracking-tight text-white group-hover:text-orange-200 transition-colors duration-300">
                   {project.title}
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2 pt-1">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="px-2.5 py-0.5 rounded-md bg-white/[0.03] border border-white/[0.08] text-[10px] text-zinc-500 font-mono group-hover:border-orange-500/20 group-hover:text-orange-300 transition-all duration-300 uppercase tracking-wider">
+                  <span key={tag} className="px-2 py-0.5 rounded-md bg-white/[0.03] border border-white/[0.08] text-[9px] md:text-[10px] text-zinc-500 font-mono group-hover:border-orange-500/20 group-hover:text-orange-300 transition-all duration-300 uppercase tracking-wider">
                     {tag}
                   </span>
                 ))}
@@ -213,14 +220,14 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
             </div>
           </div>
 
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-[11px] text-zinc-400 font-mono font-bold tracking-widest uppercase self-start md:self-auto shadow-sm">
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] text-[9px] md:text-[11px] text-zinc-400 font-mono font-bold tracking-widest uppercase self-start md:self-auto shadow-sm">
             <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: project.langColor }} />
             {project.language}
           </div>
         </div>
 
         {/* ── IMAGE SHOWCASE (SLIDER) ── */}
-        <div className="relative w-full aspect-video min-h-[350px] md:min-h-[500px] overflow-hidden bg-black/40 group/slider">
+        <div className="relative w-full aspect-[4/3] md:aspect-video min-h-[300px] md:min-h-[500px] overflow-hidden bg-black/40 group/slider">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentImg}
@@ -235,7 +242,7 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
                 src={images[currentImg]}
                 alt={`${project.title} showcase ${currentImg + 1}`}
                 fill
-                className="object-contain p-4 md:p-8"
+                className="object-contain p-2 md:p-8"
                 priority
               />
             </motion.div>
@@ -246,15 +253,15 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
             <>
               <button
                 onClick={prevImg}
-                className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-20 backdrop-blur-md opacity-0 group-hover/slider:opacity-100"
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-black/40 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-20 backdrop-blur-md opacity-100 md:opacity-0 group-hover/slider:opacity-100"
               >
-                <LeftIcon className="w-6 h-6" />
+                <LeftIcon className="w-5 h-5 md:w-6 md:h-6" />
               </button>
               <button
                 onClick={nextImg}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-20 backdrop-blur-md opacity-0 group-hover/slider:opacity-100"
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-black/40 border border-white/10 text-white/50 hover:text-white hover:bg-orange-500/40 hover:border-orange-500/50 transition-all z-20 backdrop-blur-md opacity-100 md:opacity-0 group-hover/slider:opacity-100"
               >
-                <RightIcon className="w-6 h-6" />
+                <RightIcon className="w-5 h-5 md:w-6 md:h-6" />
               </button>
 
               {/* Dots Indicator */}
@@ -273,14 +280,14 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
         </div>
 
         {/* ── CARD FOOTER ── */}
-        <div className="p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-10 relative z-10 bg-gradient-to-b from-transparent to-black/20">
-          <div className="space-y-6 flex-1">
+        <div className="p-6 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-10 relative z-10 bg-gradient-to-b from-transparent to-black/20">
+          <div className="space-y-4 md:space-y-6 flex-1">
             <div className="space-y-3">
-              <h4 className="text-orange-400 font-mono text-[10px] font-bold uppercase tracking-[0.3em] flex items-center gap-2">
+              <h4 className="text-orange-400 font-mono text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] flex items-center gap-2">
                 <Code2 className="w-4 h-4" />
                 Project Intel
               </h4>
-              <p className="text-zinc-300 text-sm md:text-lg leading-relaxed font-light max-w-3xl">
+              <p className="text-zinc-300 text-xs md:text-lg leading-relaxed font-light max-w-3xl">
                 {project.desc}
               </p>
             </div>
@@ -290,7 +297,7 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/btn relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-orange-500/5 border border-orange-500/20 text-xs md:text-sm font-bold text-orange-400 tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 hover:bg-orange-500 hover:text-black hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] whitespace-nowrap"
+            className="group/btn relative inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl bg-orange-500/5 border border-orange-500/20 text-[10px] md:text-sm font-bold text-orange-400 tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 hover:bg-orange-500 hover:text-black hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] whitespace-nowrap"
           >
             <GithubIcon className="w-4 h-4 relative z-10" />
             <span className="relative z-10">Deploy Artifact</span>

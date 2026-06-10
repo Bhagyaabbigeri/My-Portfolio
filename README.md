@@ -32,7 +32,7 @@ The portfolio features a frame-by-frame scroll animation system that takes the u
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Bhagyaabbigeri/My_Portfolio.git
+   git clone https://github.com/Bhagyaabbigeri/Portfolio.git
    ```
 2. Install dependencies:
    ```bash
@@ -45,7 +45,7 @@ The portfolio features a frame-by-frame scroll animation system that takes the u
 
 ### 🚢 Deployment
 Easily deployable on **Vercel**:
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FBhagyaabbigeri%2FMy_Portfolio)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FBhagyaabbigeri%2FPortfolio)
 
 ---
 

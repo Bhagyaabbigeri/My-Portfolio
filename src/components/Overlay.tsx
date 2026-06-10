@@ -162,7 +162,7 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
           </div>
           <div className="space-y-3">
             {[
-              { name: "SpaceRisk Radar", desc: "Real-time 3D satellite tracking", dot: "bg-orange-400" },
+              { name: "SpaceRisk-Radar", desc: "Real-time 3D satellite tracking", dot: "bg-orange-400" },
               { name: "GokulaHealth",    desc: "Offline-first Android cattle farm app", dot: "bg-cyan-400"   },
               { name: "EmpowerHer",     desc: "Women's safety platform with SOS", dot: "bg-amber-400"  },
             ].map((p) => (

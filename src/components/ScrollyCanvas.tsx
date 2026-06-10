@@ -292,7 +292,7 @@ export default function ScrollyCanvas() {
   /* ── helpers ── */
   const getFrameUrl = (index: number) => {
     const padded = String(index + startFrame).padStart(2, "0");
-    return `/sequence/frame_${padded}_delay-0.066s.png`;
+    return `/sequence/frame_${padded}_delay-0.066s.webp`;
   };
 
   const drawFrame = (index: number) => {
