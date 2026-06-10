@@ -17,7 +17,7 @@ The portfolio features a frame-by-frame scroll animation system that takes the u
 - **AI/ML:** OpenCV, LangChain, OpenAI APIs, Haar Cascade
 
 ## 🛰️ Featured Projects
-- **SpaceRisk-Radar:** Real-time SSA platform propagating 2,000+ satellites.
+- **SpaceRisk-Radar:** Real-time SSA platform with SGP4 propagation, conjunction threat detection, and advanced risk analysis.
 - **GokulaHealth:** Offline-first Android cattle farm management app.
 - **EmpowerHer:** Full-stack women's safety platform with AI threat detection.
 
