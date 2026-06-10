@@ -687,7 +687,7 @@ export default function ScrollyCanvas() {
       )}
 
       {/* ── Scroll-linked text overlays ── */}
-      {!isLoading && <Overlay scrollYProgress={scrollYProgress} />}
+      {!isLoading && <Overlay scrollYProgress={scrollYProgress} imageLayout={imageLayout} />}
     </div>
   );
 }

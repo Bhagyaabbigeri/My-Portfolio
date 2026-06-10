@@ -6,10 +6,19 @@ import Image from "next/image";
 
 interface OverlayProps {
   scrollYProgress: MotionValue<number>;
+  imageLayout?: { dx: number; dw: number; showLines: boolean };
 }
 
-export default function Overlay({ scrollYProgress }: OverlayProps) {
+export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) {
   const [activeBlock, setActiveBlock] = useState<number | null>(0);
+  const [viewportWidth, setViewportWidth] = useState(0);
+
+  useEffect(() => {
+    setViewportWidth(window.innerWidth);
+    const handleResize = () => setViewportWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (v) => {
@@ -83,7 +92,12 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -10 }}
               transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-              className="fixed top-[38%] left-6 md:left-[10%] lg:left-[18%] z-[80] pointer-events-none max-w-[250px]"
+              className="fixed top-[38%] z-[80] pointer-events-none max-w-[200px] md:max-w-[280px]"
+              style={{
+                left: imageLayout && imageLayout.dw > 0
+                  ? `${imageLayout.dx + (viewportWidth < 768 ? 16 : 40)}px`
+                  : "5%",
+              }}
             >
               <p className="text-white/90 text-[10px] sm:text-lg md:text-xl font-light italic tracking-widest text-left"
                  style={{ textShadow: "0 0 15px rgba(255,255,255,0.6)" }}>
@@ -95,7 +109,12 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 10 }}
               transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-              className="fixed top-[38%] right-6 md:right-[10%] lg:right-[18%] z-[80] pointer-events-none max-w-[250px]"
+              className="fixed top-[38%] z-[80] pointer-events-none max-w-[200px] md:max-w-[280px]"
+              style={{
+                right: imageLayout && imageLayout.dw > 0
+                  ? `${(viewportWidth - (imageLayout.dx + imageLayout.dw)) + (viewportWidth < 768 ? 16 : 40)}px`
+                  : "5%",
+              }}
             >
               <p className="text-white/90 text-[10px] sm:text-lg md:text-xl font-light italic tracking-widest text-right"
                  style={{ textShadow: "0 0 15px rgba(255,255,255,0.6)" }}>
