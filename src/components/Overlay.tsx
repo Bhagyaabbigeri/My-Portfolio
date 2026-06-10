@@ -92,11 +92,11 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -10 }}
               transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-              className="fixed top-[38%] z-[80] pointer-events-none max-w-[200px] md:max-w-[280px]"
+              className="fixed top-[38%] z-[80] pointer-events-none max-w-[120px] sm:max-w-[200px] md:max-w-[280px]"
               style={{
                 left: imageLayout && imageLayout.dw > 0
-                  ? `${imageLayout.dx + (viewportWidth < 768 ? 16 : 40)}px`
-                  : "5%",
+                  ? `${imageLayout.dx + (viewportWidth < 768 ? 12 : 40)}px`
+                  : "4%",
               }}
             >
               <p className="text-white/90 text-[10px] sm:text-lg md:text-xl font-light italic tracking-widest text-left"
@@ -109,11 +109,11 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 10 }}
               transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-              className="fixed top-[38%] z-[80] pointer-events-none max-w-[200px] md:max-w-[280px]"
+              className="fixed top-[38%] z-[80] pointer-events-none max-w-[120px] sm:max-w-[200px] md:max-w-[280px]"
               style={{
                 right: imageLayout && imageLayout.dw > 0
-                  ? `${(viewportWidth - (imageLayout.dx + imageLayout.dw)) + (viewportWidth < 768 ? 16 : 40)}px`
-                  : "5%",
+                  ? `${(viewportWidth - (imageLayout.dx + imageLayout.dw)) + (viewportWidth < 768 ? 12 : 40)}px`
+                  : "4%",
               }}
             >
               <p className="text-white/90 text-[10px] sm:text-lg md:text-xl font-light italic tracking-widest text-right"
