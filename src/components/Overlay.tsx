@@ -91,19 +91,22 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-            className="fixed z-[80] pointer-events-none flex flex-col items-center"
+            className="fixed z-[100] pointer-events-none flex flex-col items-center px-4"
             style={{
               top: "44%",
               left: imageLayout && imageLayout.dw > 0
                 ? `${imageLayout.dx + imageLayout.dw / 2}px`
                 : "50%",
               transform: "translateX(-50%)",
-              width: imageLayout && imageLayout.dw > 0 ? `${imageLayout.dw * 0.8}px` : "80%",
+              width: imageLayout && imageLayout.dw > 0 ? `${imageLayout.dw * 0.85}px` : "90%",
             }}
           >
+            {/* Subtle mobile background for readability */}
+            <div className="md:hidden absolute inset-0 bg-black/40 backdrop-blur-sm rounded-2xl -z-10" />
+
             <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-orange-500/60 to-transparent mb-3 shadow-[0_0_8px_rgba(249,115,22,0.4)]" />
-            <p className="text-white text-[11px] sm:text-lg md:text-xl font-light italic tracking-widest text-center"
-               style={{ textShadow: "0 0 15px rgba(255,255,255,0.5)" }}>
+            <p className="text-white text-[12px] sm:text-lg md:text-xl font-light italic tracking-widest text-center leading-relaxed"
+               style={{ textShadow: "0 0 20px rgba(0,0,0,0.8), 0 0 10px rgba(255,255,255,0.3)" }}>
               And She once looked at the sky, dreaming beyond limits!
             </p>
           </motion.div>
