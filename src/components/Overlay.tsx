@@ -45,31 +45,31 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
       {/* ── Block 0 · Name + Title — BOTTOM LEFT ── */}
       <div
         style={show(0)}
-        className="fixed inset-x-4 bottom-6 md:inset-x-auto md:left-8 md:bottom-12 lg:left-12 lg:bottom-16 z-[90] max-w-lg"
+        className="fixed inset-x-4 bottom-6 md:inset-x-auto md:left-6 md:bottom-8 lg:left-10 lg:bottom-10 z-[90] max-w-[280px] sm:max-w-sm md:max-w-md"
       >
         <div
-          className="space-y-3 bg-[#030014]/80 border border-orange-500/30 backdrop-blur-xl rounded-2xl p-4 sm:p-6"
-          style={{ boxShadow: "0 0 40px rgba(249,115,22,0.15), 0 8px 32px rgba(0,0,0,0.6)" }}
+          className="space-y-2 bg-[#030014]/80 border border-orange-500/30 backdrop-blur-xl rounded-2xl p-3 sm:p-4"
+          style={{ boxShadow: "0 0 30px rgba(249,115,22,0.1), 0 8px 32px rgba(0,0,0,0.6)" }}
         >
-          <div className="flex flex-row items-center gap-4 sm:gap-6 text-left">
+          <div className="flex flex-row items-center gap-3 sm:gap-4 text-left">
             <div className="relative group shrink-0">
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 rounded-2xl overflow-hidden border border-white/10 bg-[#030014]">
+              <div className="relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl overflow-hidden border border-white/10 bg-[#030014]">
                 <Image
                   src="/projects/ME.png"
                   alt="Bhagyashree Reddy"
-                  width={128}
-                  height={128}
+                  width={80}
+                  height={80}
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
             <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                <span className="text-orange-400 font-mono text-[8px] sm:text-[10px] tracking-widest uppercase">PORTFOLIO</span>
+              <div className="flex items-center gap-2 mb-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
+                <span className="text-orange-400 font-mono text-[7px] sm:text-[9px] tracking-widest uppercase">PORTFOLIO</span>
               </div>
-              <h1 className="text-lg sm:text-2xl md:text-4xl font-black tracking-tighter leading-[1.1]">
+              <h1 className="text-base sm:text-xl md:text-2xl font-black tracking-tighter leading-[1.1]">
                 <span className="text-white">Bhagyashree</span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-300">
                   Reddy
@@ -77,7 +77,7 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
               </h1>
             </div>
           </div>
-          <h2 className="text-[10px] sm:text-base md:text-lg text-orange-300 font-medium tracking-wide leading-tight">
+          <h2 className="text-[9px] sm:text-[11px] md:text-xs text-orange-300 font-medium tracking-wide leading-tight">
             Software Engineer | AI Engineer | Space Tech | Creative Director
           </h2>
         </div>
