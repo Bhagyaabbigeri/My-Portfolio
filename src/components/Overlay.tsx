@@ -40,15 +40,29 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
     transition: "opacity 0.4s ease",
   });
 
+  const gutterStyle = (side: "left" | "right") => {
+    if (viewportWidth >= 1024 && imageLayout && imageLayout.dx > 200) {
+      return {
+        left: side === "left" ? 0 : "auto",
+        right: side === "right" ? 0 : "auto",
+        width: `${imageLayout.dx}px`,
+        display: "flex",
+        justifyContent: "center",
+        padding: "0 1.5rem",
+      };
+    }
+    return {};
+  };
+
   return (
     <>
-      {/* ── Block 0 · Name + Title — BOTTOM LEFT ── */}
+      {/* ── Block 0 · Name + Title — LEFT GUTTER ── */}
       <div
-        style={show(0)}
+        style={{ ...show(0), ...gutterStyle("left") }}
         className="fixed inset-x-4 bottom-6 md:inset-x-auto md:left-6 md:bottom-12 lg:left-10 lg:bottom-16 z-[90] max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg"
       >
         <div
-          className="space-y-4 bg-[#030014]/80 border border-orange-500/30 backdrop-blur-xl rounded-2xl p-4 sm:p-6"
+          className="w-full space-y-4 bg-[#030014]/80 border border-orange-500/30 backdrop-blur-xl rounded-2xl p-4 sm:p-6"
           style={{ boxShadow: "0 0 30px rgba(249,115,22,0.1), 0 8px 32px rgba(0,0,0,0.6)" }}
         >
           <div className="flex flex-row items-center gap-4 sm:gap-6 text-left">
@@ -116,13 +130,13 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
         )}
       </AnimatePresence>
 
-      {/* ── Block 1 · Education — BOTTOM RIGHT ── */}
+      {/* ── Block 1 · Education — RIGHT GUTTER ── */}
       <div
-        style={show(1)}
+        style={{ ...show(1), ...gutterStyle("right") }}
         className="fixed inset-x-4 bottom-6 md:inset-x-auto md:right-8 md:bottom-12 lg:right-12 lg:bottom-16 z-[90] max-w-md"
       >
         <div
-          className="space-y-3 bg-[#030014]/80 border border-cyan-500/30 backdrop-blur-xl rounded-2xl p-4 sm:p-6"
+          className="w-full space-y-3 bg-[#030014]/80 border border-cyan-500/30 backdrop-blur-xl rounded-2xl p-4 sm:p-6"
           style={{ boxShadow: "0 0 40px rgba(6,182,212,0.15), 0 8px 32px rgba(0,0,0,0.6)" }}
         >
           <div className="flex items-center gap-2 mb-1">
@@ -140,13 +154,13 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
         </div>
       </div>
 
-      {/* ── Block 2 · Experience — BOTTOM LEFT ── */}
+      {/* ── Block 2 · Experience — LEFT GUTTER ── */}
       <div
-        style={show(2)}
+        style={{ ...show(2), ...gutterStyle("left") }}
         className="fixed inset-x-4 bottom-6 md:inset-x-auto md:left-8 md:bottom-12 lg:left-12 lg:bottom-16 z-[90] max-w-md"
       >
         <div
-          className="space-y-3 bg-[#030014]/80 border border-orange-500/30 backdrop-blur-xl rounded-2xl p-4 sm:p-6"
+          className="w-full space-y-3 bg-[#030014]/80 border border-orange-500/30 backdrop-blur-xl rounded-2xl p-4 sm:p-6"
           style={{ boxShadow: "0 0 40px rgba(249,115,22,0.15), 0 8px 32px rgba(0,0,0,0.6)" }}
         >
           <div className="flex items-center gap-2 mb-1">
@@ -170,9 +184,9 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
         </div>
       </div>
 
-      {/* ── Block 3 · Featured Projects — BOTTOM RIGHT ── */}
+      {/* ── Block 3 · Featured Projects — RIGHT GUTTER ── */}
       <div
-        style={show(3)}
+        style={{ ...show(3), ...gutterStyle("right") }}
         className="fixed inset-x-4 bottom-6 md:inset-x-auto md:right-8 md:bottom-12 lg:right-12 lg:bottom-16 z-[90] max-w-md"
       >
         <div
