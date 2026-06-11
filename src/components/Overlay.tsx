@@ -83,7 +83,7 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
         </div>
       </div>
 
-      {/* ── Block 0 Quote · Bottom Center ── */}
+      {/* ── Block 0 Quote · Center ── */}
       <AnimatePresence>
         {activeBlock === 0 && (
           <motion.div
@@ -91,24 +91,30 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 2, ease: "easeOut", delay: 1 }}
-            className="fixed z-[100] pointer-events-none flex flex-col items-center px-4"
-            style={{
-              top: viewportWidth < 768 ? "50%" : "44%",
-              left: imageLayout && imageLayout.dw > 0 && viewportWidth >= 768
-                ? `${imageLayout.dx + imageLayout.dw / 2}px`
-                : "50%",
-              transform: viewportWidth < 768 ? "translate(-50%, -50%)" : "translateX(-50%)",
-              width: imageLayout && imageLayout.dw > 0 && viewportWidth >= 768 ? `${imageLayout.dw * 0.85}px` : "90%",
-            }}
+            className="fixed inset-0 z-[100] pointer-events-none flex items-center justify-center px-6 md:block"
           >
-            {/* Subtle mobile background for readability */}
-            <div className="md:hidden absolute inset-0 bg-black/40 backdrop-blur-sm rounded-2xl -z-10" />
+            <div
+              className="relative flex flex-col items-center text-center"
+              style={viewportWidth >= 768 && imageLayout && imageLayout.dw > 0 ? {
+                position: "absolute",
+                top: "44%",
+                left: `${imageLayout.dx + imageLayout.dw / 2}px`,
+                transform: "translateX(-50%)",
+                width: `${imageLayout.dw * 0.85}px`,
+              } : {
+                width: "100%",
+                maxWidth: "340px"
+              }}
+            >
+              {/* Darker mobile background for better contrast against white clothing */}
+              <div className="md:hidden absolute -inset-x-6 -inset-y-4 bg-black/60 backdrop-blur-md rounded-3xl -z-10" />
 
-            <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-orange-500/60 to-transparent mb-3 shadow-[0_0_8px_rgba(249,115,22,0.4)]" />
-            <p className="text-white text-[12px] sm:text-lg md:text-xl font-light italic tracking-widest text-center leading-relaxed"
-               style={{ textShadow: "0 0 20px rgba(0,0,0,0.8), 0 0 10px rgba(255,255,255,0.3)" }}>
-              And She once looked at the sky, dreaming beyond limits!
-            </p>
+              <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-orange-500/60 to-transparent mb-4 shadow-[0_0_8px_rgba(249,115,22,0.4)]" />
+              <p className="text-white text-[13px] sm:text-lg md:text-xl font-light italic tracking-[0.15em] md:tracking-widest leading-relaxed"
+                 style={{ textShadow: "0 0 20px rgba(0,0,0,0.9)" }}>
+                And She once looked at the sky,<br className="md:hidden" /> dreaming beyond limits!
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
