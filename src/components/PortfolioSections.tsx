@@ -129,7 +129,7 @@ export function IntroSection() {
             </span>
           </h2>
           <p className="text-[10px] md:text-lg font-mono text-cyan-400 font-medium tracking-[0.2em] uppercase px-4">
-            Software Engineer · AI Engineer · Creative Director
+            Software Engineer · AI Engineer · Space Tech · Creative Director
           </p>
         </motion.div>
 

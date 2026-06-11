@@ -78,7 +78,7 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
             </div>
           </div>
           <h2 className="text-[10px] sm:text-base md:text-lg text-orange-300 font-medium tracking-wide leading-tight">
-            Software Engineer | AI Engineer | Creative Director
+            Software Engineer | AI Engineer | Space Tech | Creative Director
           </h2>
         </div>
       </div>
