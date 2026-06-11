@@ -106,12 +106,9 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
                 maxWidth: "340px"
               }}
             >
-              {/* Darker mobile background for better contrast against white clothing */}
-              <div className="md:hidden absolute -inset-x-6 -inset-y-4 bg-black/60 backdrop-blur-md rounded-3xl -z-10" />
-
               <div className="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-orange-500/60 to-transparent mb-4 shadow-[0_0_8px_rgba(249,115,22,0.4)]" />
               <p className="text-white text-[13px] sm:text-lg md:text-xl font-light italic tracking-[0.15em] md:tracking-widest leading-relaxed"
-                 style={{ textShadow: "0 0 20px rgba(0,0,0,0.9)" }}>
+                 style={{ textShadow: "0 0 15px rgba(0,0,0,0.9), 0 0 10px rgba(0,0,0,0.9)" }}>
                 And She once looked at the sky,<br className="md:hidden" /> dreaming beyond limits!
               </p>
             </div>
