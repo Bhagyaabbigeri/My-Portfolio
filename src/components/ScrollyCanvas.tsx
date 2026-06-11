@@ -268,8 +268,8 @@ export default function ScrollyCanvas() {
   const [loadProgress, setLoadProgress] = useState(0);
   const [imageLayout,  setImageLayout]  = useState({ dx: 0, dw: 0, showLines: false });
 
-  const totalFrames = 64;
-  const startFrame  = 12;
+  const totalFrames = 60;
+  const startFrame  = 16;
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
