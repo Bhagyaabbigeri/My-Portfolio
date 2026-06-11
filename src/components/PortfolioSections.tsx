@@ -645,9 +645,14 @@ export function ExperienceSection() {
 
               <div className="relative">
                 <div className="absolute left-0 top-0 w-1 h-full bg-orange-500/10 rounded-full" />
-                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed pl-5 font-light">
-                  Prepared a capstone project applying algorithms to a real-world problem. Focused on Java, Python, DSA, System Design, and OOP principles to build scalable solutions.
-                </p>
+                <div className="text-zinc-400 text-xs md:text-sm leading-relaxed pl-5 font-light space-y-3">
+                  <p>
+                    Engaged in a project-based SDE internship focusing on Full-Stack Web Development. Building end-to-end applications using React.js for responsive frontends and Node.js/Express.js for robust backends.
+                  </p>
+                  <p>
+                    Implementing RESTful APIs, managing MongoDB databases, and applying software engineering principles to write clean, maintainable code. Documenting daily learning progress and technical insights to demonstrate a commitment to continuous growth and industry-standard workflows.
+                  </p>
+                </div>
               </div>
 
               <div className="pt-2">
@@ -664,7 +669,7 @@ export function ExperienceSection() {
 
             <div className="pt-6 border-t border-white/[0.05]">
               <div className="flex flex-wrap gap-2">
-                {["Java", "Python", "DSA", "System Design", "OOP"].map((tag) => (
+                {["React.js", "Node.js", "MongoDB", "REST APIs", "Java", "Python", "DSA"].map((tag) => (
                   <motion.span
                     key={tag}
                     whileHover={{ scale: 1.1, y: -2 }}
