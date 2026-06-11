@@ -729,7 +729,7 @@ export function ExperienceSection() {
                 </div>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 flex flex-wrap gap-4">
                 <a
                   href="https://github.com/Bhagyaabbigeri/Certificates/blob/main/Involynk-offer-letter.pdf"
                   target="_blank"
@@ -737,6 +737,14 @@ export function ExperienceSection() {
                   className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-cyan-500/5 border border-cyan-500/20 text-[10px] font-bold text-cyan-400 tracking-widest uppercase transition-all duration-300 hover:bg-cyan-500 hover:text-black hover:shadow-[0_0_15px_rgba(6,182,212,0.4)]"
                 >
                   View Offer →
+                </a>
+                <a
+                  href="https://www.involynk.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-cyan-500/5 border border-cyan-500/20 text-[10px] font-bold text-cyan-400 tracking-widest uppercase transition-all duration-300 hover:bg-cyan-500 hover:text-black hover:shadow-[0_0_15px_rgba(6,182,212,0.4)]"
+                >
+                  Visit us at our official Website →
                 </a>
               </div>
             </div>
