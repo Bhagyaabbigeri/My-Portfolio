@@ -27,6 +27,27 @@ export default function Home() {
     { name: "Contact", href: "#contact" },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      setIsMenuOpen(false);
+      // Wait a bit for the menu to start closing before scrolling
+      setTimeout(() => {
+        const offset = 80; // Height of the fixed header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }, 100);
+    }
+  };
+
   return (
     <div className="relative w-full min-h-screen bg-[#030014] text-[#f4f4f5] select-none">
       
@@ -42,7 +63,12 @@ export default function Home() {
         {/* Desktop Nav */}
         <nav className="hidden xl:flex space-x-6 text-[10px] font-mono tracking-[0.2em] text-zinc-400 uppercase">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="hover:text-white transition-colors duration-200">
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="hover:text-white transition-colors duration-200"
+            >
               {link.name}
             </a>
           ))}
@@ -76,28 +102,30 @@ export default function Home() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="absolute top-full left-0 w-full bg-[#030014] border-b border-white/5 flex flex-col items-center space-y-6 xl:hidden overflow-hidden"
+              className="absolute top-full left-0 w-full bg-[#030014] border-b border-white/5 flex flex-col items-center xl:hidden overflow-hidden"
             >
-              <div className="py-10 flex flex-col items-center space-y-8">
+              <div className="py-10 flex flex-col items-center w-full">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-xs font-mono tracking-[0.3em] text-zinc-400 hover:text-white uppercase transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
+                    className="w-full text-center py-4 text-[11px] font-mono tracking-[0.3em] text-zinc-400 hover:text-white hover:bg-white/[0.02] uppercase transition-all"
+                    onClick={(e) => handleNavClick(e, link.href)}
                   >
                     {link.name}
                   </a>
                 ))}
-                <a
-                  href="https://linkedin.com/in/bhagyashree-reddy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="sm:hidden inline-flex items-center gap-2 px-8 py-3 rounded-full bg-orange-500 text-black font-bold text-[10px] font-mono tracking-widest uppercase shadow-[0_0_20px_rgba(249,115,22,0.4)]"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Connect
-                </a>
+                <div className="pt-6">
+                  <a
+                    href="https://linkedin.com/in/bhagyashree-reddy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="sm:hidden inline-flex items-center gap-2 px-8 py-3 rounded-full bg-orange-500 text-black font-bold text-[10px] font-mono tracking-widest uppercase shadow-[0_0_20px_rgba(249,115,22,0.4)]"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Connect
+                  </a>
+                </div>
               </div>
             </motion.div>
           )}
