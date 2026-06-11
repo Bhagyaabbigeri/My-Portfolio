@@ -313,7 +313,7 @@ const skillGroups: SkillGroup[] = [
     icon: "💻",
     glow: "hover:border-orange-500/40 hover:shadow-[0_0_25px_rgba(249,115,22,0.15)]",
     pillGlow: "bg-orange-500/10 border-orange-500/20 text-orange-200 shadow-[0_0_10px_rgba(249,115,22,0.1)] hover:shadow-[0_0_15px_rgba(249,115,22,0.3)] hover:border-orange-500/50",
-    items: ["Java", "JavaScript", "Python", "Kotlin", "TypeScript"],
+    items: ["Familiar: Java and Python", "Project: JavaScript, TypeScript and Kotlin"],
   },
   {
     category: "Frameworks",
