@@ -129,7 +129,7 @@ export function IntroSection() {
             </span>
           </h2>
           <p className="text-[10px] md:text-lg font-mono text-cyan-400 font-medium tracking-[0.2em] uppercase px-4">
-            Software Engineer · AI Engineer · Space Tech
+            Software Engineer · AI Engineer · Creative Director
           </p>
         </motion.div>
 
@@ -687,7 +687,7 @@ export function ExperienceSection() {
                   </div>
                   <div>
                     <h3 className="text-white text-lg md:text-2xl font-bold tracking-tight leading-tight group-hover:text-cyan-300 transition-colors duration-300">
-                      Tech & Design Director
+                      Creative Director
                     </h3>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-cyan-400 font-mono text-[10px] font-bold tracking-widest uppercase">Involynk</span>
@@ -696,22 +696,32 @@ export function ExperienceSection() {
                     </div>
                   </div>
                 </div>
-                <div className="px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-[9px] font-mono font-bold text-cyan-400 tracking-widest uppercase shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-                  May 26 – Present
+                <div className="flex flex-col items-end gap-2">
+                  <div className="px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-[9px] font-mono font-bold text-cyan-400 tracking-widest uppercase shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                    May 26 – Present
+                  </div>
+                  <a
+                    href="https://github.com/Bhagyaabbigeri/Certificates/blob/main/Involynk-offer-letter.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-[8px] font-mono text-cyan-500/60 hover:text-cyan-400 transition-colors uppercase tracking-widest"
+                  >
+                    View Offer <ArrowUpRight className="w-2.5 h-2.5" />
+                  </a>
                 </div>
               </div>
 
               <div className="relative">
                 <div className="absolute left-0 top-0 w-1 h-full bg-cyan-500/10 rounded-full" />
                 <p className="text-zinc-400 text-xs md:text-sm leading-relaxed pl-5 font-light">
-                  Leading technology and design operations at a digital innovation startup. Directing client projects across web development, app development, AI solutions, UI/UX design, branding and automation systems. Overseeing creative direction, design systems, social media strategy, SEO, content creation and lead funnels to drive brand authority and client acquisition.
+                  Leading the Creative Layer at Involynk. Designing immersive visual identities and bridging the gap between high-level technology (AI/Digital Infrastructure) and human-centric brand storytelling. Directing a collective of designers and visual editors to build intelligent digital experiences for next-generation brands.
                 </p>
               </div>
             </div>
 
             <div className="pt-6 border-t border-white/[0.05]">
               <div className="flex flex-wrap gap-2">
-                {["Web", "App", "AI", "Branding", "Automation", "SEO"].map((tag) => (
+                {["Visual Identity", "UI/UX", "Brand Storytelling", "Creative Direction", "AI Ecosystems"].map((tag) => (
                   <motion.span
                     key={tag}
                     whileHover={{ scale: 1.1, y: -2 }}

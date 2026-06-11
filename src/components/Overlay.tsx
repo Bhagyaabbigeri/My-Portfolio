@@ -78,7 +78,7 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
             </div>
           </div>
           <h2 className="text-[10px] sm:text-base md:text-lg text-orange-300 font-medium tracking-wide leading-tight">
-            Software Engineer | AI Engineer | Space Tech
+            Software Engineer | AI Engineer | Creative Director
           </h2>
         </div>
       </div>
@@ -162,9 +162,9 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
             </div>
             <div className="border-l-2 border-amber-500/40 pl-4 text-left">
               <p className="text-zinc-500 font-mono text-[8px] sm:text-[10px] mb-0.5">May 2026 – Present</p>
-              <h4 className="text-white text-xs sm:text-sm font-bold">Tech & Design Director</h4>
-              <p className="text-amber-300 text-[10px] sm:text-xs">Involynk</p>
-              <p className="text-zinc-400 text-[8px] sm:text-[10px] mt-0.5">Web · App · AI · Branding · Automation</p>
+              <h4 className="text-white text-xs sm:text-sm font-bold">Creative Director</h4>
+              <p className="text-orange-300 text-[10px] sm:text-xs">Involynk</p>
+              <p className="text-zinc-400 text-[8px] sm:text-[10px] mt-0.5">Visual Identity · UI/UX · Brand Storytelling · Creative Direction</p>
             </div>
           </div>
         </div>
