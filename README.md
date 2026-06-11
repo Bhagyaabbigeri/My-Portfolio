@@ -32,7 +32,7 @@ The portfolio features a frame-by-frame scroll animation system that takes the u
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Bhagyaabbigeri/Portfolio.git
+   git clone https://github.com/Bhagyaabbigeri/My-Portfolio.git
    ```
 2. Install dependencies:
    ```bash

@@ -93,12 +93,12 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
             transition={{ duration: 2, ease: "easeOut", delay: 1 }}
             className="fixed z-[100] pointer-events-none flex flex-col items-center px-4"
             style={{
-              top: "44%",
-              left: imageLayout && imageLayout.dw > 0
+              top: viewportWidth < 768 ? "50%" : "44%",
+              left: imageLayout && imageLayout.dw > 0 && viewportWidth >= 768
                 ? `${imageLayout.dx + imageLayout.dw / 2}px`
                 : "50%",
-              transform: "translateX(-50%)",
-              width: imageLayout && imageLayout.dw > 0 ? `${imageLayout.dw * 0.85}px` : "90%",
+              transform: viewportWidth < 768 ? "translate(-50%, -50%)" : "translateX(-50%)",
+              width: imageLayout && imageLayout.dw > 0 && viewportWidth >= 768 ? `${imageLayout.dw * 0.85}px` : "90%",
             }}
           >
             {/* Subtle mobile background for readability */}
