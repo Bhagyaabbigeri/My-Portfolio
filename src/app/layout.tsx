@@ -10,12 +10,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Bhagyashree Reddy",
-  description: "Personal scrollytelling portfolio of Bhagyashree Reddy, Full-Stack & Android Developer building impactful solutions across web, mobile, AI, and Space Technology.",
+  description: "Personal scrollytelling portfolio of Bhagyashree Reddy.",
   keywords: ["Bhagyashree Reddy", "Full-Stack Developer", "Android Developer", "Space Technology", "AI Solutions"],
   authors: [{ name: "Bhagyashree Reddy" }],
   openGraph: {
     title: "Bhagyashree Reddy",
-    description: "Building impactful real-world applications across web, mobile, and AI",
+    description: "Personal portfolio of Bhagyashree Reddy",
     type: "website",
   },
 };
