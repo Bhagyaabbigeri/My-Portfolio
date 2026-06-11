@@ -638,8 +638,18 @@ export function ExperienceSection() {
                     </div>
                   </div>
                 </div>
-                <div className="px-3 py-1 rounded-full bg-orange-950/40 border border-orange-500/30 text-[9px] font-mono font-bold text-orange-400 tracking-widest uppercase">
-                  Aug 25 – Mar 26
+                <div className="flex flex-col items-end gap-2">
+                  <div className="px-3 py-1 rounded-full bg-orange-950/40 border border-orange-500/30 text-[9px] font-mono font-bold text-orange-400 tracking-widest uppercase">
+                    Aug 25 – Mar 26
+                  </div>
+                  <a
+                    href="https://github.com/Bhagyaabbigeri/SDE-Full-Stack"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-[8px] font-mono text-orange-500/60 hover:text-orange-400 transition-colors uppercase tracking-widest"
+                  >
+                    View Repository <ArrowUpRight className="w-2.5 h-2.5" />
+                  </a>
                 </div>
               </div>
 
