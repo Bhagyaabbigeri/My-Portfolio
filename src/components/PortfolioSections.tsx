@@ -638,18 +638,8 @@ export function ExperienceSection() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col items-end gap-2">
-                  <div className="px-3 py-1 rounded-full bg-orange-950/40 border border-orange-500/30 text-[9px] font-mono font-bold text-orange-400 tracking-widest uppercase">
-                    Aug 25 – Mar 26
-                  </div>
-                  <a
-                    href="https://github.com/Bhagyaabbigeri/SDE-Full-Stack"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-[8px] font-mono text-orange-500/60 hover:text-orange-400 transition-colors uppercase tracking-widest"
-                  >
-                    View Repository <ArrowUpRight className="w-2.5 h-2.5" />
-                  </a>
+                <div className="px-3 py-1 rounded-full bg-orange-950/40 border border-orange-500/30 text-[9px] font-mono font-bold text-orange-400 tracking-widest uppercase">
+                  Aug 25 – Mar 26
                 </div>
               </div>
 
@@ -658,6 +648,17 @@ export function ExperienceSection() {
                 <p className="text-zinc-400 text-xs md:text-sm leading-relaxed pl-5 font-light">
                   Prepared a capstone project applying algorithms to a real-world problem. Focused on Java, Python, DSA, System Design, and OOP principles to build scalable solutions.
                 </p>
+              </div>
+
+              <div className="pt-2">
+                <a
+                  href="https://github.com/Bhagyaabbigeri/SDE-Full-Stack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-orange-500/5 border border-orange-500/20 text-[10px] font-bold text-orange-400 tracking-widest uppercase transition-all duration-300 hover:bg-orange-500 hover:text-black hover:shadow-[0_0_15px_rgba(249,115,22,0.4)]"
+                >
+                  View Repository →
+                </a>
               </div>
             </div>
 
@@ -706,18 +707,8 @@ export function ExperienceSection() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col items-end gap-2">
-                  <div className="px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-[9px] font-mono font-bold text-cyan-400 tracking-widest uppercase shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-                    May 26 – Present
-                  </div>
-                  <a
-                    href="https://github.com/Bhagyaabbigeri/Certificates/blob/main/Involynk-offer-letter.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-[8px] font-mono text-cyan-500/60 hover:text-cyan-400 transition-colors uppercase tracking-widest"
-                  >
-                    View Offer <ArrowUpRight className="w-2.5 h-2.5" />
-                  </a>
+                <div className="px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-[9px] font-mono font-bold text-cyan-400 tracking-widest uppercase shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                  May 26 – Present
                 </div>
               </div>
 
@@ -726,6 +717,17 @@ export function ExperienceSection() {
                 <p className="text-zinc-400 text-xs md:text-sm leading-relaxed pl-5 font-light">
                   Leading the Creative Layer at Involynk. Designing immersive visual identities and bridging the gap between high-level technology (AI/Digital Infrastructure) and human-centric brand storytelling. Directing a collective of designers and visual editors to build intelligent digital experiences for next-generation brands.
                 </p>
+              </div>
+
+              <div className="pt-2">
+                <a
+                  href="https://github.com/Bhagyaabbigeri/Certificates/blob/main/Involynk-offer-letter.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-cyan-500/5 border border-cyan-500/20 text-[10px] font-bold text-cyan-400 tracking-widest uppercase transition-all duration-300 hover:bg-cyan-500 hover:text-black hover:shadow-[0_0_15px_rgba(6,182,212,0.4)]"
+                >
+                  View Offer →
+                </a>
               </div>
             </div>
 
