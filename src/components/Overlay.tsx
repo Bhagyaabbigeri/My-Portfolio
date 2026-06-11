@@ -161,7 +161,7 @@ export default function Overlay({ scrollYProgress, imageLayout }: OverlayProps) 
               <p className="text-zinc-400 text-[8px] sm:text-[10px] mt-0.5">Java · Python · DSA · System Design</p>
             </div>
             <div className="border-l-2 border-amber-500/40 pl-4 text-left">
-              <p className="text-zinc-500 font-mono text-[8px] sm:text-[10px] mb-0.5">May 2026 – Present</p>
+              <p className="text-zinc-500 font-mono text-[8px] sm:text-[10px] mb-0.5">Apr 2026 – Present</p>
               <h4 className="text-white text-xs sm:text-sm font-bold">Creative Director</h4>
               <p className="text-orange-300 text-[10px] sm:text-xs">Involynk</p>
               <p className="text-zinc-400 text-[8px] sm:text-[10px] mt-0.5">Visual Identity · UI/UX · Brand Storytelling · Creative Direction</p>

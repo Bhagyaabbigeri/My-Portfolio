@@ -708,15 +708,20 @@ export function ExperienceSection() {
                   </div>
                 </div>
                 <div className="px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-[9px] font-mono font-bold text-cyan-400 tracking-widest uppercase shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-                  May 26 – Present
+                  Apr 26 – Present
                 </div>
               </div>
 
               <div className="relative">
                 <div className="absolute left-0 top-0 w-1 h-full bg-cyan-500/10 rounded-full" />
-                <p className="text-zinc-400 text-xs md:text-sm leading-relaxed pl-5 font-light">
-                  Leading the Creative Layer at Involynk. Designing immersive visual identities and bridging the gap between high-level technology (AI/Digital Infrastructure) and human-centric brand storytelling. Directing a collective of designers and visual editors to build intelligent digital experiences for next-generation brands.
-                </p>
+                <div className="text-zinc-400 text-xs md:text-sm leading-relaxed pl-5 font-light space-y-3">
+                  <p>
+                    Leading the Creative Layer at Involynk. Designing immersive visual identities and bridging the gap between high-level technology (AI/Digital Infrastructure) and human-centric brand storytelling.
+                  </p>
+                  <p>
+                    Directing client projects across web development, app development, AI solutions, UI/UX design, branding and automation systems. Overseeing creative direction, design systems, social media strategy, SEO, content creation and lead funnels to drive brand authority and client acquisition.
+                  </p>
+                </div>
               </div>
 
               <div className="pt-2">
