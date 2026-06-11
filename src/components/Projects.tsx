@@ -67,7 +67,7 @@ const projects: ProjectItem[] = [
     id: "spacerisk-radar",
     num: "01",
     title: "SpaceRisk-Radar",
-    desc: "A high-fidelity Space Situational Awareness (SSA) platform for real-time orbital tracking and threat analysis. Features high-precision SGP4/SDP4 propagation for 2,000+ satellites, automated conjunction monitoring with customizable screening thresholds (2000km+), and live velocity diagnostics. Includes advanced risk layers for debris clouds, chain probabilities, and Hubble Drag compensation scenarios. Integrates geodetic coordinate mapping, environment stats for LEO/GEO orbits, and ground visibility link diagnostics for global DSN stations.",
+    desc: "A high-fidelity Space Situational Awareness (SSA) platform for real-time orbital tracking and threat analysis. Features high-precision SGP4/SDP4 propagation for 2,000+ satellites, automated conjunction monitoring with customizable screening thresholds (2,000km+), and live velocity diagnostics. Includes advanced risk layers for debris clouds, chain probabilities, and Hubble Drag compensation (dV 0.18 m/s). Integrates geodetic coordinate mapping, environment stats for LEO/GEO orbits, and ground visibility link diagnostics for global DSN stations (Madrid, White Sands).",
     tags: ["Python", "Flask", "SGP4", "Three.js", "Socket.IO", "Orbital Mechanics", "Space Tech", "Telemetry", "SSA"],
     link: "https://github.com/Bhagyaabbigeri/SpaceRisk-Radar",
     language: "Python",
